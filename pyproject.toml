@@ -22,4 +22,4 @@ version = "0.2.0"
 zugubul_remote = "zugubul_remote:main"
 
 [tool.setuptools]
-py-modules = ["zugubl_remote"]
+py-modules = ["zugubul_remote"]
