@@ -112,6 +112,11 @@ def init_annotate_parser(annotate_parser: GooeyParser) -> None:
         default='TIC'
     )
     add_arg(
+        "SERVER",
+        help="Address for server to run command on.",
+        default="mjsimmons@grice.ucsd.edu"
+    )
+    add_arg(
         "--inference_method",
         "-im",
         choices=['local', 'api', 'try_api'],
@@ -139,7 +144,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     init_annotate_parser(parser)
     args = parser.parse_args(argv)
 
-    in_files = [ args.WAV_FILE]
+    in_files = [args.WAV_FILE]
     if args.template:
         in_files.append(args.template)
     out_name = os.path.basename(args.WAV_FILE)
@@ -158,7 +163,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         sys.argv,
         in_files,
         out_files,
-        server='mjsimmons@grice.ucsd.edu',
+        server=args.SERVER,
         server_python='zugubul/.venv/bin/python',
         passphrase=args.PASSWORD
     )
