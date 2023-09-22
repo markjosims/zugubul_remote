@@ -138,7 +138,7 @@ def init_annotate_parser(annotate_parser: GooeyParser) -> None:
         widget='FileChooser'
     )
 
-@Gooey
+@Gooey(program_name='Zugubul remote runner', image_dir='icons')
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = GooeyParser()
     init_annotate_parser(parser)

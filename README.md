@@ -1,1 +1,2 @@
 script for running annotate command from `zugubul` on a remote server.
+Pumpkin clipart from: [Image by brgfx](https://www.freepik.com/free-vector/isolated-pumpkin-cartoon-sticker_18054174.htm#query=pumpkin%20clip%20art&position=3&from_view=keyword&track=ais) on Freepik.
