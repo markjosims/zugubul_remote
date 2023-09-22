@@ -88,7 +88,7 @@ def init_annotate_parser(annotate_parser: GooeyParser) -> None:
     )
     add_arg(
         "OUT",
-        help='Path to .eaf file to save annotations to.',
+        help='Folder to .eaf file to save annotations in.',
         widget='DirChooser'
     )
     add_arg(
