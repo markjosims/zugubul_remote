@@ -8,6 +8,8 @@ from typing import Sequence, Optional
 from pathlib import Path
 from gooey import Gooey, GooeyParser
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
 def run_script_on_server(
         argv: Sequence[str],
         in_files: Sequence[str],
@@ -138,7 +140,10 @@ def init_annotate_parser(annotate_parser: GooeyParser) -> None:
         widget='FileChooser'
     )
 
-@Gooey(program_name='Zugubul remote runner', image_dir='icons')
+@Gooey(
+        program_name='Zugubul remote runner',
+        image_dir=os.path.join(dir_path, 'icons')
+)
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = GooeyParser()
     init_annotate_parser(parser)
