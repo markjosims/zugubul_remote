@@ -137,7 +137,8 @@ def init_annotate_parser(annotate_parser: GooeyParser) -> None:
         '--template',
         type=lambda x: is_valid_file(annotate_parser, x),
         help='Template .etf file for generating output .eafs.',
-        widget='FileChooser'
+        widget='FileChooser',
+        default=os.path.join(dir_path, 'Tira_template.etf')
     )
 
 @Gooey(
