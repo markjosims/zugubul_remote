@@ -29,7 +29,7 @@ def run_script_on_server(
             server_fp = server_dir/filename
             
             print(f'Putting {local_fp} to {server_fp}')
-            #c.put(str(local_fp), str(server_fp))
+            c.put(str(local_fp), str(server_fp))
             argv = [arg if arg!=local_fp else str(server_fp) for arg in argv]
 
         # replace local fps with server fp but don't put to server
@@ -159,12 +159,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     out_path = os.path.join(args.OUT, out_name)
     out_files = [out_path]
 
-    argv = sys.argv
+    # include arg for 'annotate' command
+    argv = sys.argv[:1] + ['annotate'] + sys.argv[1:]
+    
     # remove PASSWORD arg
     argv.remove(args.PASSWORD)
 
     run_script_on_server(
-        sys.argv,
+        argv,
         in_files,
         out_files,
         server=args.SERVER,
