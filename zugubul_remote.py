@@ -160,6 +160,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     # include arg for 'annotate' command
     argv = sys.argv[:1] + ['annotate'] + sys.argv[1:]
+
+    # replace out dirpath with out filepath
+    argv = [x if x != args.OUT else out_path for x in argv]
     
     # remove PASSWORD and SERVER args
     argv.remove(args.PASSWORD)
