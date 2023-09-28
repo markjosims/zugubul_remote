@@ -3,7 +3,6 @@
 import os
 import sys
 from fabric import Connection
-from paramiko.ssh_exception import PasswordRequiredException
 from typing import Sequence, Optional
 from pathlib import Path
 from gooey import Gooey, GooeyParser
