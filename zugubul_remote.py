@@ -161,8 +161,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     # include arg for 'annotate' command
     argv = sys.argv[:1] + ['annotate'] + sys.argv[1:]
     
-    # remove PASSWORD arg
+    # remove PASSWORD and SERVER args
     argv.remove(args.PASSWORD)
+    argv.remove(args.SERVER)
 
     run_script_on_server(
         argv,
