@@ -148,6 +148,7 @@ def init_annotate_parser(annotate_parser: GooeyParser) -> None:
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = GooeyParser()
     init_annotate_parser(parser)
+
     args = parser.parse_args(argv)
 
     in_files = [args.WAV_FILE]
@@ -161,10 +162,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     argv = sys.argv
     # remove PASSWORD arg
     argv.remove(args.PASSWORD)
-
-    # move OUT arg to after LANG
-    argv.remove(args.OUT)
-    argv[5] = args.OUT
 
     run_script_on_server(
         sys.argv,
