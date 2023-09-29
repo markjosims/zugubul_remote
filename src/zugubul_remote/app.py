@@ -6,8 +6,7 @@ from fabric import Connection
 from typing import Sequence, Optional
 from pathlib import Path
 from gooey import Gooey, GooeyParser
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
+from importlib_resources import files
 
 def run_script_on_server(
         argv: Sequence[str],
@@ -137,12 +136,12 @@ def init_annotate_parser(annotate_parser: GooeyParser) -> None:
         type=lambda x: is_valid_file(annotate_parser, x),
         help='Template .etf file for generating output .eafs.',
         widget='FileChooser',
-        default=os.path.join(dir_path, 'Tira_template.etf')
+        default=str(files('elan').joinpath('Tira_template.etf'))
     )
 
 @Gooey(
         program_name='Zugubul remote runner',
-        image_dir=os.path.join(dir_path, 'icons')
+        image_dir=files('icons')
 )
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = GooeyParser()
