@@ -16,7 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = ["gooey", "fabric", "importlib-resources"]
-version = "0.2.2"
+version = "0.2.3"
 
 [project.scripts]
 zugubul_remote = "zugubul_remote.app:main"
