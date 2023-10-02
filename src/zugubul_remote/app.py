@@ -153,7 +153,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if args.template:
         in_files.append(args.template)
     out_name = os.path.basename(args.WAV_FILE)
-    out_name = out_name.replace('.wav', '-MODEL.wav')
+    out_name = out_name.replace('.wav', '-MODEL.eaf')
     out_path = os.path.join(args.OUT, out_name)
     out_files = [out_path]
 
